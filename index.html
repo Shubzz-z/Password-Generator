@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML & Tailwind CSS Starter Pack</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <div class="flex w-full h-screen justify-center items-center bg-[#3F0751] text-white">
+        <div class="flex flex-col gap-5 w-[22.5rem]">
+            <h1 class="text-2xl text-center">Password Generator</h1>
+            <!-- Password display block -->
+            <div class="bg-[#180C1D] p-4 rounded-lg flex justify-between">
+                <input readonly name="Password" placeholder="Password" class="text-[#E9D510] w-full h-full bg-[#180C1D] focus:outline-none">
+                <div class="relative">
+                    <span class="hidden absolute -top-16 -left-8 bg-[#180C1D] w-20 p-2 text-center rounded-2xl" data-showCopy>Copied !</span>
+                </div>
+                <i class="fa-regular fa-copy" data-copy></i>
+            </div>
+            <!-- Password customization -->
+            <div class="bg-[#180C1D] p-6 rounded-xl flex flex-col gap-1">
+                <!-- Password length -->
+                <div class="flex justify-between">
+                    <p>Password Length</p>
+                    <p data-pass_length>0</p>
+                </div>
+                <!-- Password Slider -->
+                <input type="range" class="my-2" name="pass_range" id="pass_range_id" min="0" max="20" step="1" data-pass_slider>
+                <!-- Password check box -->
+                <div>
+                    <input type="checkbox" id="uppercase" class="h-4 w-4" checked>
+                    <label for="uppercase">include UpperCase Letter</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="lowercase" class="h-4 w-4">
+                    <label for="lowercase">include LowerCase Letter</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="numbers" class="h-4 w-4">
+                    <label for="numbers">include Numbers</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="symbols" class="h-4 w-4">
+                    <label for="symbols">include Symbols</label>
+                </div>
+                <!-- Strength block -->
+                <div class="flex justify-between my-3 h-8">
+                    <p>Strength</p>
+                    <div data-indictor class="strength border-2 rounded-full w-6 h-6"></div>
+                </div>
+                <button type="button" class="bg-[#B144C8] py-3 rounded-xl" data-generate-password>Generate Password</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script src="https://kit.fontawesome.com/6684b224de.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
